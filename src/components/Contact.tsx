@@ -11,7 +11,6 @@ export default function Contact() {
     error,
     handleChange,
     handleSubmit,
-    resetForm,
   } = useContactForm();
 
   const { contact, social } = personalConfig;

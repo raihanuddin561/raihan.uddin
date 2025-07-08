@@ -120,18 +120,20 @@ export const useContactForm = (): UseContactFormReturn => {
       } else {
         throw new Error(`Failed to send email. Status: ${response.status}`);
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Email sending error:', err);
       
       // More detailed error handling
       let errorMessage = 'Failed to send message. Please try again or contact me directly via email.';
       
-      if (err.text) {
-        console.error('EmailJS Error Details:', err.text);
-        errorMessage = `Error: ${err.text}`;
-      } else if (err.message) {
-        console.error('Error Message:', err.message);
-        errorMessage = `Error: ${err.message}`;
+      if (err && typeof err === 'object') {
+        if ('text' in err && typeof err.text === 'string') {
+          console.error('EmailJS Error Details:', err.text);
+          errorMessage = `Error: ${err.text}`;
+        } else if ('message' in err && typeof err.message === 'string') {
+          console.error('Error Message:', err.message);
+          errorMessage = `Error: ${err.message}`;
+        }
       }
       
       setError(errorMessage);
