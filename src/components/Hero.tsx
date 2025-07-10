@@ -20,7 +20,7 @@ export default function Hero() {
       setCurrentRole((prev) => (prev + 1) % roles.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [roles.length]);
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -85,12 +85,21 @@ export default function Hero() {
             
             <div className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto min-h-[60px] flex items-center justify-center">
               <span className="inline-block">
-                <span className="font-semibold text-blue-600 dark:text-blue-400 transition-all duration-500">
+                <span 
+                  className="font-semibold text-blue-600 dark:text-blue-400 transition-all duration-500"
+                  role="img" 
+                  aria-label={`Current role: ${roles[currentRole]}`}
+                >
                   {roles[currentRole]}
                 </span>
                 {' '}specializing in{' '}
                 <span className="font-semibold text-purple-600 dark:text-purple-400">Backend for Frontend (BFF)</span>
                 {' '}architecture
+              </span>
+              
+              {/* Hidden text for SEO - contains all roles for search engines */}
+              <span className="sr-only">
+                Senior Java Backend Developer, Spring Boot Expert, Microservices Architect, and BFF Specialist specializing in Backend for Frontend architecture
               </span>
             </div>
           </div>

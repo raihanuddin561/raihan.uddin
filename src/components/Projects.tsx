@@ -1,8 +1,8 @@
 export default function Projects() {
   const projects = [
     {
-      title: "BabyBliss E-Commerce",
-      description: "Full-stack baby shop with user/admin roles, order management, product catalog, JWT auth, cart checkout, and admin dashboard with charts.",
+      title: "B2B E-Commerce",
+      description: "Full-stack B2B shop with user/admin roles, order management, product catalog, JWT auth, cart checkout, and admin dashboard with charts.",
       status: "In Progress",
       image: "/api/placeholder/600/400",
       technologies: ["Java", "Spring Boot", "React", "Docker", "PostgreSQL", "JWT"],
@@ -15,18 +15,17 @@ export default function Projects() {
         "CI/CD pipeline with GitHub Actions"
       ],
       links: {
-        github: "https://github.com/raihanudd/babybliss",
+        github: "https://github.com/raihanuddin561/b2b-ecommerce",
         live: null
       }
     },
     {
-      title: "Microservices Architecture Migration",
+      title: "Microservices Based Application",
       description: "Led the migration of a legacy monolithic application to microservices architecture, improving scalability and maintainability.",
       status: "Completed",
       image: "/api/placeholder/600/400",
       technologies: ["Java 21", "Spring Boot 3", "Docker", "Kubernetes", "PostgreSQL", "Redis"],
       features: [
-        "Decomposed monolith into 8 microservices",
         "Implemented API Gateway pattern",
         "Service discovery with Eureka",
         "Circuit breaker pattern implementation",
@@ -34,7 +33,7 @@ export default function Projects() {
         "Database per service pattern"
       ],
       links: {
-        github: null,
+        github: "https://github.com/raihanuddin561/microservice-based-app",
         live: null
       }
     },
@@ -173,7 +172,7 @@ export default function Projects() {
 
         <div className="mt-16 text-center">
           <a
-            href="https://github.com/raihanudd"
+            href="https://github.com/raihanuddin561"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-3 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-medium rounded-full transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
