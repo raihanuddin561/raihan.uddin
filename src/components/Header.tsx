@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +19,7 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <a href="#" className="text-2xl font-bold text-gray-900 dark:text-white">
+            <a href="#" className="text-2xl font-bold text-gray-900 dark:text-white" suppressHydrationWarning={true}>
               Raihan
             </a>
           </div>
@@ -31,18 +32,22 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                  suppressHydrationWarning={true}
                 >
                   {item.name}
                 </a>
               ))}
+              <ThemeToggle />
             </div>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none"
+              suppressHydrationWarning={true}
             >
               <svg
                 className="h-6 w-6"
@@ -80,10 +85,14 @@ export default function Header() {
                   href={item.href}
                   className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
+                  suppressHydrationWarning={true}
                 >
                   {item.name}
                 </a>
               ))}
+              <div className="px-3 py-2">
+                <ThemeToggle />
+              </div>
             </div>
           </div>
         )}

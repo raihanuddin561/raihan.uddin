@@ -76,13 +76,6 @@ export const useContactForm = (): UseContactFormReturn => {
     setError(null);
 
     try {
-      // Log configuration for debugging
-      console.log('EmailJS Configuration:', {
-        serviceID: emailConfig.serviceID,
-        templateID: emailConfig.templateID,
-        publicKey: emailConfig.publicKey?.substring(0, 5) + '...' // Only show first 5 chars for security
-      });
-
       // Prepare template parameters
       const templateParams = {
         from_name: formData.name,
@@ -95,10 +88,7 @@ export const useContactForm = (): UseContactFormReturn => {
         subject: `New Contact Form Message from ${formData.name}`,
       };
 
-      console.log('Template parameters:', templateParams);
-
       // Send email using EmailJS
-      console.log('Sending email...');
       const response = await emailjs.send(
         emailConfig.serviceID,
         emailConfig.templateID,
@@ -106,10 +96,7 @@ export const useContactForm = (): UseContactFormReturn => {
         emailConfig.publicKey
       );
 
-      console.log('EmailJS Response:', response);
-
       if (response.status === 200) {
-        console.log('Email sent successfully!');
         setIsSuccess(true);
         setFormData({
           name: '',
@@ -128,10 +115,8 @@ export const useContactForm = (): UseContactFormReturn => {
       
       if (err && typeof err === 'object') {
         if ('text' in err && typeof err.text === 'string') {
-          console.error('EmailJS Error Details:', err.text);
           errorMessage = `Error: ${err.text}`;
         } else if ('message' in err && typeof err.message === 'string') {
-          console.error('Error Message:', err.message);
           errorMessage = `Error: ${err.message}`;
         }
       }

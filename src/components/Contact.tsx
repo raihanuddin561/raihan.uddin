@@ -158,6 +158,7 @@ export default function Contact() {
                   className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Your full name"
                   required
+                  suppressHydrationWarning={true}
                 />
               </div>
 
@@ -175,6 +176,7 @@ export default function Contact() {
                   className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="your.email@company.com"
                   required
+                  suppressHydrationWarning={true}
                 />
               </div>
 
@@ -191,6 +193,7 @@ export default function Contact() {
                   disabled={isLoading}
                   className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Your company name (optional)"
+                  suppressHydrationWarning={true}
                 />
               </div>
 
@@ -208,6 +211,7 @@ export default function Contact() {
                   className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Tell me about the role and your team..."
                   required
+                  suppressHydrationWarning={true}
                 ></textarea>
               </div>
 
@@ -215,6 +219,7 @@ export default function Contact() {
                 type="submit"
                 disabled={isLoading}
                 className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium py-3 px-6 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:hover:shadow-lg flex items-center justify-center"
+                suppressHydrationWarning={true}
               >
                 {isLoading ? (
                   <>
