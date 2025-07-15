@@ -8,6 +8,41 @@ export default function Projects() {
   const { social } = personalConfig;
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
+  const handleResumeDownload = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    try {
+      // First, try to fetch the file to ensure it exists
+      const response = await fetch('/resume/Raihan_Uddin_Resume.pdf');
+      
+      if (!response.ok) {
+        throw new Error('Resume file not found');
+      }
+      
+      // Create blob from response
+      const blob = await response.blob();
+      
+      // Create download link
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'Raihan_Uddin_Resume.pdf';
+      
+      // Append to body, click, and remove
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Clean up the URL object
+      window.URL.revokeObjectURL(url);
+      
+    } catch (error) {
+      console.error('Download failed:', error);
+      // Fallback to direct link
+      window.open('/resume/Raihan_Uddin_Resume.pdf', '_blank');
+    }
+  };
+
   const projects = [
     {
       title: "B2B E-Commerce",
@@ -119,6 +154,17 @@ export default function Projects() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </a>
+                  <button
+                    onClick={handleResumeDownload}
+                    className="group relative p-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full border-2 border-purple-300 dark:border-purple-600 hover:border-purple-600 dark:hover:border-purple-400 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl"
+                    suppressHydrationWarning={true}
+                    title="Download Resume"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-700 rounded-full opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                    <svg className="w-7 h-7 text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
