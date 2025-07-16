@@ -119,7 +119,7 @@ export default function Projects() {
             <div className="flex justify-center items-center space-x-8 mb-8">
               <div className="text-center">
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 font-medium">Connect with me</p>
-                <div className="flex justify-center items-end space-x-6">
+                <div className="flex justify-center space-x-6">
                   <a
                     href={social.github.url}
                     target="_blank"
@@ -154,20 +154,6 @@ export default function Projects() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </a>
-                  <div className="flex flex-col items-center">
-                    <button
-                      onClick={handleResumeDownload}
-                      className="group relative p-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full border-2 border-purple-300 dark:border-purple-600 hover:border-purple-600 dark:hover:border-purple-400 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl"
-                      suppressHydrationWarning={true}
-                      title="Download Resume"
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-700 rounded-full opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-                      <svg className="w-7 h-7 text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                    </button>
-                    <span className="text-xs text-purple-600 dark:text-purple-400 font-medium mt-2">Resume</span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -193,7 +179,7 @@ export default function Projects() {
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <button
                       onClick={handleResumeDownload}
-                      className="group relative inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 min-w-[200px]"
+                      className="group relative inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 min-w-[200px] cursor-pointer"
                       suppressHydrationWarning={true}
                     >
                       <svg className="w-5 h-5 mr-3 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -503,7 +489,7 @@ export default function Projects() {
       <div className="fixed bottom-8 right-8 z-40">
         <button
           onClick={handleResumeDownload}
-          className="group relative bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110 hover:from-purple-700 hover:to-indigo-700"
+          className="group relative bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110 hover:from-purple-700 hover:to-indigo-700 cursor-pointer"
           suppressHydrationWarning={true}
           title="Download Resume - Quick Access"
         >
