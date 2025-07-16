@@ -201,11 +201,11 @@ export default function Projects() {
                   <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div className="bg-white/50 dark:bg-gray-800/50 rounded-xl p-4 backdrop-blur-sm">
                       <div className="text-purple-600 dark:text-purple-400 font-semibold text-sm mb-1">Experience</div>
-                      <div className="text-gray-900 dark:text-white font-bold">5+ Years</div>
+                      <div className="text-gray-900 dark:text-white font-bold">6+ Years</div>
                     </div>
                     <div className="bg-white/50 dark:bg-gray-800/50 rounded-xl p-4 backdrop-blur-sm">
                       <div className="text-indigo-600 dark:text-indigo-400 font-semibold text-sm mb-1">Projects</div>
-                      <div className="text-gray-900 dark:text-white font-bold">15+ Completed</div>
+                      <div className="text-gray-900 dark:text-white font-bold">10+ Completed</div>
                     </div>
                     <div className="bg-white/50 dark:bg-gray-800/50 rounded-xl p-4 backdrop-blur-sm">
                       <div className="text-purple-600 dark:text-purple-400 font-semibold text-sm mb-1">Technologies</div>
