@@ -14,14 +14,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Raihan Uddin - Senior Java Backend Developer",
-  description: "Experienced Java Backend Developer with 5+ years of expertise in Spring Boot, microservices, and BFF architecture. Seeking remote backend roles with UK/EU companies.",
-  keywords: "Java Developer, Spring Boot, Microservices, Backend Developer, BFF Architecture, PostgreSQL, Remote Developer",
+  title: "Raihan Uddin | Principal Software Engineer",
+  description: "Principal Software Engineer specializing in Java, Spring Boot, REST APIs, BFF architecture, and enterprise backend systems.",
+  keywords: "Principal Software Engineer, Java, Spring Boot, Backend Architecture, BFF, REST API, PostgreSQL",
   authors: [{ name: "Raihan Uddin" }],
   creator: "Raihan Uddin",
   openGraph: {
-    title: "Raihan Uddin - Senior Java Backend Developer",
-    description: "Experienced Java Backend Developer specializing in Spring Boot, microservices, and Backend for Frontend (BFF) architecture.",
+    title: "Raihan Uddin | Principal Software Engineer",
+    description: "Principal Software Engineer specializing in Java, Spring Boot, REST APIs, and BFF architecture.",
     url: "https://raihan-portfolio.vercel.app",
     siteName: "Raihan Uddin Portfolio",
     locale: "en_US",
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Raihan Uddin - Senior Java Backend Developer",
-    description: "Experienced Java Backend Developer specializing in Spring Boot, microservices, and Backend for Frontend (BFF) architecture.",
+    title: "Raihan Uddin | Principal Software Engineer",
+    description: "Principal Software Engineer specializing in Java, Spring Boot, REST APIs, and BFF architecture.",
   },
   robots: {
     index: true,

@@ -2,15 +2,15 @@
 export const personalConfig = {
   // Basic Information
   name: "Raihan Uddin",
-  title: "Senior Java Backend Developer",
-  subtitle: "Specializing in Spring Boot, Microservices & BFF Architecture",
+  title: "Principal Software Engineer | Java & Spring Boot",
+  subtitle: "Enterprise backend architecture, REST APIs, and technical leadership",
   location: "Dhaka, Bangladesh",
-  availability: "Available for remote opportunities",
+  availability: "Open to high-impact engineering opportunities",
   
   // Contact Information
   contact: {
     email: "raihanuddin561@gmail.com",
-    phone: "+880 1749948344", 
+    phone: "+8801749948344",
     location: "Dhaka, Bangladesh",
     timezone: "GMT+6",
   },
@@ -33,81 +33,99 @@ export const personalConfig = {
   
   // Professional Summary
   summary: {
-    short: "Senior Java Backend Developer with 6+ years of experience in Spring Boot, microservices architecture, and BFF (Backend for Frontend) development.",
-    long: "Passionate Senior Java Backend Developer with over 6 years of professional experience in designing and developing scalable, high-performance backend systems. Expertise in Spring Boot, microservices architecture, and Backend for Frontend (BFF) patterns. Strong background in REST API development, database design, and DevOps practices. Proven track record of leading technical initiatives and mentoring junior developers while delivering robust solutions for enterprise-level applications."
+    short: "Principal Software Engineer with 7+ years of experience building enterprise-grade Java and Spring Boot systems.",
+    long: "Principal Software Engineer with 7+ years of experience designing, building, and leading enterprise-grade backend systems using Java and Spring Boot. Experienced in REST API and Backend-for-Frontend architecture, service-layer design, relational data modelling, modernization, and mentoring on globally distributed teams."
   },
   
   // Experience Data
   experience: [
     {
+      title: "Principal Software Engineer",
+      company: "BJIT Ltd",
+      location: "Dhaka, Bangladesh",
+      period: "Jul 2026 – Present",
+      type: "Current Role",
+      description: "Leading backend architecture and technical direction for enterprise services.",
+      responsibilities: [
+        "Lead backend architecture and technical direction across API design, service structure, and maintainability.",
+        "Review backend designs and code across the team to uphold engineering standards and consistency.",
+        "Apply agentic AI coding tools with specification-first prompting and rigorous review to accelerate delivery."
+      ],
+      technologies: ["Java", "Spring Boot", "REST APIs", "Technical Leadership", "Code Review"]
+    },
+    {
       title: "Senior Software Engineer",
       company: "BJIT Ltd",
       location: "Dhaka, Bangladesh",
-      period: "Aug 2021 – Present",
-      type: "Current Role",
-      description: "Working on backend development initiatives with focus on BFF architecture and microservices",
+      period: "Aug 2023 – Jun 2026",
+      type: "Previous Role",
+      description: "Designed and developed enterprise BFF services and REST APIs.",
       responsibilities: [
-        "Developed and maintained BFF (Backend for Frontend) services in Java 21 and Spring Boot 3, enabling optimized data aggregation and transformation for web/mobile frontends",
-        "Designed and implemented REST APIs tailored specifically for different frontend clients (React, Angular), ensuring separation of concerns and reduced payload size",
-        "Utilized record types and sealed classes in Java 21 to create concise, immutable DTOs and domain models",
-        "Integrated JWT-based authentication and role-based authorization using Spring Security, securing BFF endpoints",
-        "Coordinated with frontend developers to deliver client-specific API responses, simplifying complex domain logic at the backend",
-        "Employed Spring WebClient and RestTemplate for downstream service integration, including timeout handling, retries, and circuit breakers",
-        "Used MapStruct for clean and efficient data mapping between entities and DTOs",
-        "Designed unit tests and integration tests using JUnit 5 and Mockito, achieving high test coverage",
-        "Containerized the BFF service using Docker, and contributed to CI/CD workflows using GitHub Actions"
+        "Designed Backend-for-Frontend services using Java 21 and Spring Boot for enterprise SaaS platforms.",
+        "Built RESTful APIs with enterprise-standard authentication and authorization, documented via Swagger/OpenAPI.",
+        "Led modernization of legacy enterprise applications, improving maintainability, scalability, and performance.",
+        "Applied Spring Data JPA and Hibernate for data access, query tuning, and transaction management.",
+        "Diagnosed complex production issues and mentored junior engineers through reviews and technical guidance."
       ],
-      technologies: ["Java 21", "Spring Boot 3", "JWT", "PostgreSQL", "Docker", "GitHub Actions", "JUnit 5", "Mockito", "MapStruct", "Spring Security"]
+      technologies: ["Java 21", "Spring Boot", "Spring Data JPA", "Hibernate", "Swagger/OpenAPI", "JUnit 5"]
     },
     {
-      title: "Java Developer",
+      title: "Software Engineer",
+      company: "BJIT Ltd",
+      location: "Dhaka, Bangladesh",
+      period: "Aug 2021 – Jul 2023",
+      type: "Previous Role",
+      description: "Developed and maintained backend features and REST endpoints in Agile teams.",
+      responsibilities: [
+        "Developed and maintained backend features and REST endpoints using Java and Spring Boot in Agile teams."
+      ],
+      technologies: ["Java", "Spring Boot", "REST APIs", "Agile/Scrum"]
+    },
+    {
+      title: "Software Engineer (Java)",
       company: "ServicEngine Ltd",
       location: "Dhaka, Bangladesh",
       period: "Feb 2020 – Aug 2021",
       type: "Previous Role",
-      description: "Full-stack Java development with focus on enterprise applications",
+      description: "Built enterprise HR and payroll systems across backend and frontend workflows.",
       responsibilities: [
-        "Delivered RESTful APIs for internal finance and HR systems",
-        "Collaborated with frontend teams via REST/BFF endpoints",
-        "Designed relational DB schemas and implemented stored procedures",
-        "Participated in Agile/Scrum with code reviews and Git branching strategies",
-        "Built secure and scalable microservices using Spring Boot",
-        "Led migration of legacy monolith to microservices architecture",
-        "Wrote unit/integration tests with 90%+ coverage using JUnit/Mockito"
+        "Developed enterprise HR and payroll systems using Java, Spring Boot, MySQL, and React.",
+        "Optimized SQL queries and database schemas for performance and data consistency.",
+        "Wrote unit and integration tests with JUnit alongside business analysts and QA in Agile cycles."
       ],
-      technologies: ["Java", "Spring Boot", "PostgreSQL", "REST APIs", "Microservices", "Git", "Agile/Scrum", "JUnit", "Mockito"]
+      technologies: ["Java", "Spring Boot", "MySQL", "React", "JUnit"]
     },
     {
-      title: "Java Developer",
+      title: "Software Developer (Java)",
       company: "Merinasoft Ltd",
       location: "Dhaka, Bangladesh",
       period: "May 2019 – Jan 2020",
       type: "Previous Role",
-      description: "Software development for pc applications with java swing",
+      description: "Developed and maintained POS and billing applications.",
       responsibilities: [
-        "Developed a Point of Sale system using Java Swing and MySQL, adhering to OOP principles",
-        "Designed and implemented a Utility Management System using Java Swing and MySQL"
+        "Developed POS and billing applications using Java and MySQL.",
+        "Maintained application stability through debugging and performance tuning."
       ],
-      technologies: ["Java", "Java Swing", "MySQL"]
+      technologies: ["Java", "MySQL", "Debugging", "Performance Tuning"]
     }
   ],
   
   // Skills Configuration
   skills: {
     primary: [
-      { name: "Java", level: 95, category: "Programming Languages" },
+      { name: "Java (11-21)", level: 95, category: "Programming Languages" },
       { name: "Spring Boot", level: 90, category: "Frameworks" },
-      { name: "Microservices", level: 85, category: "Architecture" },
+      { name: "BFF Architecture", level: 85, category: "Architecture" },
       { name: "REST APIs", level: 90, category: "Web Services" },
       { name: "PostgreSQL", level: 85, category: "Databases" },
-      { name: "Docker", level: 80, category: "DevOps" }
+      { name: "PostgreSQL", level: 85, category: "Databases" }
     ],
     secondary: [
       { name: "Spring Security", level: 85, category: "Security" },
       { name: "JUnit & Mockito", level: 90, category: "Testing" },
       { name: "Git", level: 90, category: "Version Control" },
       { name: "CI/CD", level: 80, category: "DevOps" },
-      { name: "JWT", level: 85, category: "Authentication" }
+      { name: "Swagger/OpenAPI", level: 85, category: "API Design" }
     ],
     categories: [
       "Programming Languages",
@@ -119,86 +137,64 @@ export const personalConfig = {
       "Security",
       "Testing",
       "Version Control",
-      "Authentication"
+      "API Design"
     ]
   },
   
   // Projects (you can add your projects here)
   projects: [
     {
-      title: "Enterprise BFF Service",
-      description: "Backend for Frontend service serving multiple client applications",
-      technologies: ["Java 21", "Spring Boot 3", "PostgreSQL", "Docker"],
+      title: "SkyZoneBD",
+      description: "Production-deployed B2B wholesale platform with buyer verification, tiered pricing, RFQ negotiation, inventory, and partner profit-sharing.",
+      technologies: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Vercel"],
       features: [
-        "Client-specific API responses",
-        "JWT-based authentication",
-        "Circuit breaker pattern",
-        "Comprehensive testing suite"
+        "Architecture Decision Records for domain, data, API, and security decisions",
+        "JWT authentication and Zod validation",
+        "Jest unit and integration tests gated by GitHub Actions",
+        "Documented agentic AI engineering workflow with PR quality gates"
       ],
       status: "Production",
-      type: "Professional"
+      type: "Independent"
     },
     {
-      title: "Microservices Migration",
-      description: "Led migration from monolith to microservices architecture",
-      technologies: ["Java", "Spring Boot", "Docker", "PostgreSQL"],
+      title: "B2B E-Commerce Backend",
+      description: "A self-directed Spring Boot backend exploring service-layer structuring and REST API design.",
+      technologies: ["Java", "Spring Boot"],
       features: [
-        "Service decomposition",
-        "API gateway implementation",
-        "Database per service",
-        "Monitoring and logging"
+        "Service-layer structuring",
+        "REST API design"
       ],
-      status: "Completed",
-      type: "Professional"
+      status: "In Progress",
+      type: "Independent"
     }
   ],
   
   // Education
   education: [
     {
-      degree: "Bachelor of Science in Computer Science", // Update with your actual degree
-      institution: "Daffodil International University", // Update with your actual university
-      year: "2019", // Update with your graduation year
+      degree: "B.Sc. in Software Engineering",
+      institution: "Daffodil International University",
+      year: "Sept 2015 - Dec 2019",
       location: "Dhaka, Bangladesh"
-    }
-  ],
-  
-  // Certifications
-  certifications: [
-    {
-      name: "Oracle Certified Professional, Java SE", // Update with actual certifications
-      issuer: "Oracle",
-      year: "2021",
-      credentialId: "123456789" // Update with actual credential ID
-    },
-    {
-      name: "Spring Professional Certification", // Update with actual certifications
-      issuer: "VMware",
-      year: "2022",
-      credentialId: "987654321" // Update with actual credential ID
     }
   ],
   
   // Expertise Areas
   expertise: [
     "Java & Spring Boot Development",
-    "Microservices Architecture",
     "Backend for Frontend (BFF)",
     "REST API Design",
     "Database Design & Optimization",
-    "DevOps & CI/CD",
-    "Performance Optimization",
-    "Security Implementation"
+    "Technical Leadership & Mentoring",
+    "AI-Assisted Engineering"
   ],
   
   // Animated roles for Hero section
   animatedRoles: [
-    "Senior Java Developer",
-    "Backend Architect",
-    "Spring Boot Expert",
-    "Microservices Specialist",
-    "BFF Developer",
-    "API Designer"
+    "Principal Software Engineer",
+    "Java & Spring Boot",
+    "Backend Architecture",
+    "Technical Leadership"
   ],
   
   // Tech badges for floating animation
@@ -207,19 +203,18 @@ export const personalConfig = {
     "Spring Boot",
     "PostgreSQL",
     "Docker",
-    "Microservices",
     "REST APIs",
-    "JWT",
-    "Spring Security",
-    "JUnit",
-    "Git"
+    "Spring Data JPA",
+    "PostgreSQL",
+    "OpenAPI",
+    "Docker"
   ],
   
   // Meta information for SEO
   meta: {
-    title: "Raihan Uddin - Senior Java Backend Developer",
-    description: "Senior Java Backend Developer specializing in Spring Boot, microservices, and BFF architecture. 6+ years experience in enterprise application development.",
-    keywords: "Java Developer, Spring Boot, Microservices, Backend Developer, BFF, REST API, PostgreSQL, Docker",
+    title: "Raihan Uddin | Principal Software Engineer",
+    description: "Principal Software Engineer specializing in Java, Spring Boot, REST APIs, BFF architecture, and enterprise backend systems.",
+    keywords: "Principal Software Engineer, Java, Spring Boot, Backend Architecture, BFF, REST API, PostgreSQL",
     author: "Raihan Uddin",
     url: "https://raihanuddin.dev", // Update with your actual website URL
     image: "/images/raihan-uddin.jpeg" // Your profile image
