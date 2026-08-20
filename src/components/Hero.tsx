@@ -69,7 +69,7 @@ export default function Hero() {
         <div className="relative mx-auto w-full max-w-md lg:max-w-sm">
           <div className="absolute -inset-3 translate-x-3 translate-y-3 border border-[#c96d35]/45" />
           <div className="relative aspect-[5/4] overflow-hidden bg-[#d8e3da]">
-            <Image src="/images/raihan-uddin.jpg" alt="Raihan Uddin" fill priority sizes="(max-width: 1024px) 90vw, 28vw" className="object-cover grayscale" />
+            <Image src="/images/raihan-uddin.jpeg" alt="Raihan Uddin" fill priority sizes="(max-width: 1024px) 90vw, 28vw" className="object-cover grayscale" />
           </div>
           <div className="absolute -bottom-4 -left-4 bg-[#15231b] px-4 py-3 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[#e8efe9] dark:bg-[#c96d35]">
             Java · Spring Boot · REST APIs
