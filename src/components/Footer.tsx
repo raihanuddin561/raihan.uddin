@@ -6,12 +6,12 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-[#101512] py-12 text-[#f4f0e8]">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-2xl font-bold mb-4">{personalConfig.name}</h3>
-            <p className="text-gray-300 mb-4">
+            <p className="text-[#c5cec7] mb-4">
               {personalConfig.summary.short}
             </p>
             <div className="flex space-x-4">
@@ -19,7 +19,7 @@ export default function Footer() {
                 href={personalConfig.social.github.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
+                className="text-[#8a968d] hover:text-[#f4f0e8] transition-colors duration-200"
               >
                 <span className="sr-only">GitHub</span>
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -30,7 +30,7 @@ export default function Footer() {
                 href={personalConfig.social.linkedin.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
+                className="text-[#8a968d] hover:text-[#f4f0e8] transition-colors duration-200"
               >
                 <span className="sr-only">LinkedIn</span>
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -39,7 +39,7 @@ export default function Footer() {
               </a>
               <a
                 href={`mailto:${personalConfig.contact.email}`}
-                className="text-gray-400 hover:text-white transition-colors duration-200"
+                className="text-[#8a968d] hover:text-[#f4f0e8] transition-colors duration-200"
               >
                 <span className="sr-only">Email</span>
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -53,27 +53,27 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#about" className="text-gray-400 hover:text-white transition-colors duration-200">
+                <a href="#about" className="text-[#8a968d] hover:text-[#f4f0e8] transition-colors duration-200">
                   About
                 </a>
               </li>
               <li>
-                <a href="#experience" className="text-gray-400 hover:text-white transition-colors duration-200">
+                <a href="#experience" className="text-[#8a968d] hover:text-[#f4f0e8] transition-colors duration-200">
                   Experience
                 </a>
               </li>
               <li>
-                <a href="#projects" className="text-gray-400 hover:text-white transition-colors duration-200">
+                <a href="#projects" className="text-[#8a968d] hover:text-[#f4f0e8] transition-colors duration-200">
                   Projects
                 </a>
               </li>
               <li>
-                <a href="#skills" className="text-gray-400 hover:text-white transition-colors duration-200">
+                <a href="#skills" className="text-[#8a968d] hover:text-[#f4f0e8] transition-colors duration-200">
                   Skills
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-gray-400 hover:text-white transition-colors duration-200">
+                <a href="#contact" className="text-[#8a968d] hover:text-[#f4f0e8] transition-colors duration-200">
                   Contact
                 </a>
               </li>
@@ -84,17 +84,17 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Expertise</h4>
             <ul className="space-y-2 text-gray-400">
               {personalConfig.expertise.map((skill, index) => (
-                <li key={index}>{skill}</li>
+                <li key={index} className="text-[#8a968d]">{skill}</li>
               ))}
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
+          <p className="text-[#8a968d] text-sm">
             © {currentYear} {personalConfig.name}. All rights reserved.
           </p>
-          <p className="text-gray-400 text-sm mt-2 sm:mt-0">
+          <p className="text-[#8a968d] text-sm mt-2 sm:mt-0">
             Built with Next.js & Tailwind CSS
           </p>
         </div>

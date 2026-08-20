@@ -6,89 +6,76 @@ export default function Experience() {
   const experiences = personalConfig.experience;
 
   return (
-    <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+    <section id="experience" className="bg-[#eef1ec] py-24 dark:bg-[#151b17]">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+        <div className="mb-14 flex flex-col justify-between gap-4 border-b border-[#cbd6ce] pb-6 sm:flex-row sm:items-end dark:border-[#3a463e]">
+          <div>
+          <p className="font-mono text-sm font-semibold uppercase tracking-[0.16em] text-[#c96d35]">Career</p>
+          <h2 className="mt-3 font-serif text-4xl font-semibold text-[#15231b] sm:text-5xl dark:text-[#f4f0e8]">
             Work Experience
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto"></div>
+          </div>
+          <p className="max-w-xs text-sm leading-6 text-[#657269] dark:text-[#aebbb1]">A track record of building dependable systems and helping teams deliver with clarity.</p>
         </div>
 
-        <div className="space-y-8">
+        {/* Vertical timeline */}
+        <div className="relative">
           {experiences.map((exp, index) => (
-            <div key={index} className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-              <div className="p-8">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                        {exp.title}
-                      </h3>
-                      {exp.type === "Current Role" && (
-                        <span className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400 text-sm font-medium rounded-full">
-                          Current
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-xl text-blue-600 dark:text-blue-400 font-semibold mb-1">
-                      {exp.company}
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-300">
-                      {exp.location}
-                    </p>
-                  </div>
-                  <div className="mt-4 lg:mt-0">
-                    <span className="inline-flex items-center px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-400 text-sm font-medium rounded-lg">
-                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                      {exp.period}
-                    </span>
-                  </div>
-                </div>
+            <div key={index} className="relative pb-12 pl-7 last:pb-0 sm:pl-10">
+              {/* Timeline connector line */}
+              {index < experiences.length - 1 && (
+                <div className="absolute left-[5px] top-[18px] h-full w-px bg-[#cbd6ce] dark:bg-[#3a463e] sm:left-[7px]" />
+              )}
+              {/* Timeline dot */}
+              <div className={`absolute left-0 top-[7px] h-3 w-3 rounded-full ring-4 ${
+                exp.type === 'Current Role'
+                  ? 'bg-[#237a57] ring-[#eef1ec] dark:ring-[#151b17]'
+                  : 'bg-[#a9b6ac] ring-[#eef1ec] dark:bg-[#526159] dark:ring-[#151b17]'
+              }`} />
 
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Key Responsibilities</h4>
-                  <ul className="space-y-3">
-                    {exp.responsibilities.map((responsibility, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <svg className="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                        <span className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                          {responsibility}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+              {/* Header */}
+              <div className="mb-1.5 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <h3 className="text-xl font-semibold text-[#15231b] sm:text-2xl dark:text-[#f4f0e8]">{exp.title}</h3>
+                  {exp.type === 'Current Role' && (
+                    <span className="border border-[#9bc5ac] px-2.5 py-0.5 font-mono text-[0.65rem] uppercase tracking-[0.1em] text-[#237a57] dark:border-[#527e64] dark:text-[#72c79d]">Current</span>
+                  )}
                 </div>
+                <span className="shrink-0 font-mono text-xs text-[#8a968d]">{exp.period}</span>
+              </div>
 
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Technologies Used</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {exp.technologies.map((tech, idx) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-200"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+              {/* Company */}
+              <p className="mb-4 font-semibold text-[#237a57] dark:text-[#72c79d]">
+                {exp.company}
+                <span className="mx-2 font-normal text-[#a9b6ac]">·</span>
+                <span className="font-normal text-[#657269] dark:text-[#8a968d]">{exp.location}</span>
+              </p>
+
+              {/* Responsibilities */}
+              <ul className="mb-4 space-y-2">
+                {exp.responsibilities.map((r, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5">
+                    <span className="mt-[9px] h-1 w-1 shrink-0 bg-[#c96d35]" />
+                    <span className="leading-relaxed text-[#526159] dark:text-[#c5cec7]">{r}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Tech tags */}
+              <div className="flex flex-wrap gap-1.5">
+                {exp.technologies.map((tech, idx) => (
+                  <span key={idx} className="border border-[#cbd6ce] px-2.5 py-0.5 font-mono text-xs text-[#526159] dark:border-[#3a463e] dark:text-[#8a968d]">{tech}</span>
+                ))}
               </div>
             </div>
           ))}
         </div>
 
         <div className="mt-12 text-center">
-          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg shadow-lg">
-            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-            </svg>
-            6+ Years of Professional Experience
-          </div>
+          <span className="inline-flex items-center gap-2 border border-[#c96d35] px-6 py-3 font-mono text-xs uppercase tracking-[0.1em] text-[#c96d35]">
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
+            7+ Years of Professional Experience
+          </span>
         </div>
       </div>
     </section>

@@ -1,147 +1,84 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Skills() {
   const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 500);
-    return () => clearTimeout(timer);
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
+      { threshold: 0.1 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
   }, []);
+
   const skillCategories = [
-    {
-      title: "Backend Development",
-      icon: "🔧",
-      skills: [
-        { name: "Java 21", level: 95 },
-        { name: "Spring Boot", level: 90 },
-        { name: "Spring Security", level: 85 },
-        { name: "JPA/Hibernate", level: 85 },
-        { name: "Microservices", level: 80 },
-        { name: "REST APIs", level: 90 }
-      ]
-    },
-    {
-      title: "Databases",
-      icon: "🗄️",
-      skills: [
-        { name: "PostgreSQL", level: 85 },
-        { name: "MySQL", level: 80 },
-        { name: "Database Design", level: 85 }
-      ]
-    },
-    {
-      title: "Frontend",
-      icon: "🎨",
-      skills: [
-        { name: "React", level: 75 },
-        { name: "Tailwind CSS", level: 80 },
-        { name: "JavaScript", level: 75 },
-        { name: "TypeScript", level: 70 }
-      ]
-    },
-    {
-      title: "DevOps & Tools",
-      icon: "⚙️",
-      skills: [
-        { name: "Docker", level: 80 },
-        { name: "GitHub Actions", level: 75 },
-        { name: "Git", level: 90 },
-        { name: "Maven/Gradle", level: 85 },
-        { name: "Swagger/OpenAPI", level: 80 },
-        { name: "Postman", level: 85 }
-      ]
-    },
-    {
-      title: "Testing",
-      icon: "🧪",
-      skills: [
-        { name: "JUnit 5", level: 90 },
-        { name: "Mockito", level: 85 },
-        { name: "Integration Testing", level: 80 },
-        { name: "Test-Driven Development", level: 75 }
-      ]
-    },
-    {
-      title: "Architecture & Patterns",
-      icon: "🏗️",
-      skills: [
-        { name: "BFF Pattern", level: 90 },
-        { name: "Circuit Breaker", level: 75 },
-        { name: "API Gateway", level: 80 },
-        { name: "SOLID Principles", level: 85 },
-        { name: "Clean Architecture", level: 80 }
-      ]
-    }
+    { title: 'Backend', skills: ['Java 21', 'Spring Boot', 'Spring Security', 'JPA / Hibernate', 'Microservices', 'REST APIs', 'Spring WebFlux'] },
+    { title: 'Databases', skills: ['PostgreSQL', 'MySQL', 'Database Design', 'Query Optimisation', 'Transaction Management'] },
+    { title: 'Architecture', skills: ['BFF Pattern', 'API Gateway', 'Circuit Breaker', 'Clean Architecture', 'SOLID Principles', 'Domain-Driven Design'] },
+    { title: 'Testing', skills: ['JUnit 5', 'Mockito', 'Integration Testing', 'Test-Driven Development'] },
+    { title: 'DevOps & Build', skills: ['Docker', 'GitHub Actions', 'Git', 'Maven', 'Gradle', 'Swagger / OpenAPI', 'Postman'] },
+    { title: 'Frontend', skills: ['React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Next.js'] },
   ];
 
-  const tools = [
-    "IntelliJ IDEA",
-    "VS Code",
-    "Jira",
-    "Confluence",
-    "Bitbucket",
-    "GitHub",
-    "Docker Desktop",
-    "pgAdmin"
+  const tools = ['IntelliJ IDEA', 'VS Code', 'Jira', 'Confluence', 'Bitbucket', 'GitHub', 'Docker Desktop', 'pgAdmin'];
+
+  const highlights = [
+    { metric: '90%+', label: 'Test coverage', desc: 'Comprehensive unit and integration tests on every service.' },
+    { metric: '100K+', label: 'Monthly users', desc: 'Production systems built for scale, reliability, and low latency.' },
+    { metric: '5+', label: 'Years leading', desc: 'Technical leadership, architecture reviews, and team mentoring.' },
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+    <section id="skills" ref={sectionRef} className="bg-white py-24 dark:bg-[#101512]">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+        <div className="mb-14 max-w-2xl">
+          <p className="font-mono text-sm font-semibold uppercase tracking-[0.16em] text-[#c96d35]">Toolkit</p>
+          <h2 className="mt-3 font-serif text-4xl font-semibold text-[#15231b] sm:text-5xl dark:text-[#f4f0e8]">
             Technical Skills
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto"></div>
-          <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            My comprehensive skill set spanning backend development, databases, DevOps, and modern software architecture patterns.
+          <p className="mt-5 text-lg leading-8 text-[#526159] dark:text-[#c5cec7]">
+            Spanning backend systems, data architecture, DevOps, and modern software design patterns.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
+        {/* Tag grid by category */}
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category, index) => (
-            <div key={index} className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-center mb-6">
-                <span className="text-3xl mr-3">{category.icon}</span>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">{category.title}</h3>
+            <div
+              key={index}
+              className={`transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
+              style={{ transitionDelay: `${index * 80}ms` }}
+            >
+              <div className="mb-4 flex items-center gap-3 border-b border-[#d7dfd9] pb-3 dark:border-[#3a463e]">
+                <span className="font-mono text-xs font-semibold text-[#c96d35]">{String(index + 1).padStart(2, '0')}</span>
+                <h3 className="font-semibold text-[#15231b] dark:text-[#f4f0e8]">{category.title}</h3>
               </div>
-              
-              <div className="space-y-4">
-                {category.skills.map((skill, idx) => (
-                  <div key={idx}>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">{skill.name}</span>
-                      <span className="text-sm text-gray-500 dark:text-gray-400">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                      <div 
-                        className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full transition-all duration-1000 ease-out"
-                        style={{ 
-                          width: isVisible ? `${skill.level}%` : '0%',
-                          transitionDelay: `${idx * 100}ms`
-                        }}
-                      ></div>
-                    </div>
-                  </div>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="border border-[#cbd6ce] px-3 py-1.5 text-sm text-[#526159] transition-colors duration-150 hover:border-[#237a57] hover:text-[#237a57] dark:border-[#3a463e] dark:text-[#c5cec7] dark:hover:border-[#72c79d] dark:hover:text-[#72c79d]"
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>
           ))}
         </div>
 
-        <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Development Tools & IDEs</h3>
-            <p className="text-gray-600 dark:text-gray-300">Tools I use daily for development, debugging, and project management</p>
-          </div>
-          
-          <div className="flex flex-wrap justify-center gap-4">
-            {tools.map((tool, index) => (
+        {/* Daily tools strip */}
+        <div className="mt-12 border-y border-[#d7dfd9] py-8 dark:border-[#3a463e]">
+          <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-[#657269]">Daily Tools &amp; IDEs</p>
+          <div className="flex flex-wrap gap-2">
+            {tools.map((tool) => (
               <span
-                key={index}
-                className="px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-gray-800 dark:text-gray-200 rounded-lg font-medium hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-200 cursor-default"
+                key={tool}
+                className="border border-[#cbd6ce] px-3 py-1.5 font-mono text-xs text-[#526159] transition-colors duration-150 hover:border-[#237a57] hover:text-[#237a57] dark:border-[#3a463e] dark:text-[#8a968d] dark:hover:border-[#72c79d] dark:hover:text-[#72c79d]"
               >
                 {tool}
               </span>
@@ -149,38 +86,18 @@ export default function Skills() {
           </div>
         </div>
 
-        <div className="mt-16 grid md:grid-cols-3 gap-8">
-          <div className="text-center p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-lg">
-            <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-              </svg>
+        {/* Highlights strip */}
+        <div className="mt-12 grid gap-px border border-[#d7dfd9] bg-[#d7dfd9] dark:border-[#3a463e] dark:bg-[#3a463e] sm:grid-cols-3">
+          {highlights.map((item) => (
+            <div key={item.metric} className="bg-white px-6 py-7 dark:bg-[#101512]">
+              <p className="font-serif text-3xl font-semibold text-[#15231b] dark:text-[#f4f0e8]">{item.metric}</p>
+              <p className="mt-1 font-semibold text-[#237a57] dark:text-[#72c79d]">{item.label}</p>
+              <p className="mt-1 text-sm leading-relaxed text-[#526159] dark:text-[#8a968d]">{item.desc}</p>
             </div>
-            <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">90%+ Test Coverage</h4>
-            <p className="text-gray-600 dark:text-gray-300">Committed to writing comprehensive unit and integration tests</p>
-          </div>
-
-          <div className="text-center p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-lg">
-            <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Performance Focused</h4>
-            <p className="text-gray-600 dark:text-gray-300">Optimizing applications to serve 100K+ monthly users efficiently</p>
-          </div>
-
-          <div className="text-center p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-lg">
-            <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-            </div>
-            <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Team Collaboration</h4>
-            <p className="text-gray-600 dark:text-gray-300">Experienced in Agile methodologies and cross-functional teams</p>
-          </div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
+

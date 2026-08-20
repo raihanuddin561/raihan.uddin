@@ -20,9 +20,9 @@ export default function About() {
         <div>
           <p className="max-w-3xl text-xl leading-9 text-[#47564d] dark:text-[#c5cec7]">{personalConfig.summary.long}</p>
           <div className="mt-10 grid gap-x-8 gap-y-5 sm:grid-cols-2">
-            {focusAreas.map((area) => (
+            {focusAreas.map((area, index) => (
               <div key={area} className="border-t border-[#d7dfd9] pt-4 dark:border-[#3a463e]">
-                <span className="font-mono text-xs text-[#c96d35]">01</span>
+                <span className="font-mono text-xs text-[#c96d35]">{String(index + 1).padStart(2, '0')}</span>
                 <p className="mt-2 font-medium text-[#1d2d23] dark:text-[#e3e8e3]">{area}</p>
               </div>
             ))}
