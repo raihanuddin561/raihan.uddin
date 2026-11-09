@@ -67,7 +67,7 @@ export default function Header() {
           </nav>
 
           {/* Right Action Bar */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             <a
               href="/resume/Raihan_Uddin_Resume.pdf"
               download

@@ -55,15 +55,15 @@ export default function Experience() {
               </div>
 
               {/* Roles Timeline within Company */}
-              <div className="relative pl-6 sm:pl-8 space-y-10">
+              <div className="relative pl-7 sm:pl-8 space-y-10">
                 {/* Vertical timeline spine */}
-                <div className="absolute left-2 sm:left-3 top-2.5 bottom-2.5 w-px bg-slate-800 light:bg-slate-300" />
+                <div className="absolute left-[7px] top-2.5 bottom-2.5 w-px bg-slate-800 light:bg-slate-300" />
 
                 {companyGroup.roles.map((role) => (
                   <div key={role.title} className="relative group">
                     {/* Timeline Node Indicator */}
                     <div
-                      className={`absolute -left-6 sm:-left-8 top-1 flex h-4 w-4 items-center justify-center rounded-full border-2 transition-transform ${
+                      className={`absolute -left-7 top-1 flex h-3.5 w-3.5 items-center justify-center rounded-full border-2 transition-transform ${
                         role.current
                           ? 'border-emerald-400 bg-emerald-500 shadow-md shadow-emerald-500/30'
                           : 'border-slate-600 bg-slate-900 light:bg-white light:border-slate-400'

@@ -47,8 +47,8 @@ export default function About() {
         </div>
 
         {/* Engineering Profile Facts strip */}
-        <div className="mt-12 rounded-xl border border-slate-800 bg-[#0e1524]/50 p-6 light:bg-slate-50 light:border-slate-200">
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+        <div className="mt-12 rounded-xl border border-slate-800 bg-[#0e1524]/50 p-5 sm:p-6 light:bg-slate-50 light:border-slate-200">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
             <div>
               <p className="font-mono text-xs uppercase tracking-wider text-slate-500">Total Experience</p>
               <p className="mt-1 text-xl font-bold text-white light:text-slate-900">7+ Years</p>

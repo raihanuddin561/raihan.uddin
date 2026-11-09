@@ -1,8 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import HydrationErrorBoundary from "@/components/HydrationErrorBoundary";
 import { personalConfig } from "@/config/personal";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#080c14",
+};
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
