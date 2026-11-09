@@ -305,7 +305,7 @@ export const personalConfig = {
     title: "Raihan Uddin | Senior Backend Engineer — Java & Spring Boot",
     description:
       "Raihan Uddin is a backend software engineer specializing in Java, Spring Boot, microservices, REST APIs, and reliable enterprise application development.",
-    canonicalUrl: "https://raihanuddin.dev",
+    canonicalUrl: "https://raihanuddin.me",
     ogImage: "/images/raihan-uddin.jpeg",
   },
 };

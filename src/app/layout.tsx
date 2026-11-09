@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://raihanuddin.dev"),
+  metadataBase: new URL("https://raihanuddin.me"),
   title: personalConfig.seo.title,
   description: personalConfig.seo.description,
   keywords: [
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: personalConfig.seo.title,
     description: personalConfig.seo.description,
-    url: "https://raihanuddin.dev",
+    url: "https://raihanuddin.me",
     siteName: `${personalConfig.name} — Portfolio`,
     locale: "en_US",
     type: "profile",
