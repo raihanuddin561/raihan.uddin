@@ -169,7 +169,7 @@ export default function Hero() {
                 {/* Portrait Container */}
                 <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-slate-900 light:bg-slate-200">
                   <Image
-                    src="/images/raihan-uddin.jpeg"
+                    src="/images/raihan-uddin.jpg"
                     alt="Raihan Uddin — Senior Backend Engineer"
                     fill
                     priority
