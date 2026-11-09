@@ -1,37 +1,75 @@
 import { personalConfig } from '@/config/personal';
 
-const focusAreas = [
-  'Enterprise backend architecture',
-  'REST APIs and BFF services',
-  'Service-layer design and data modelling',
-  'Modernization and production problem solving',
-  'Technical leadership and mentoring',
-  'Specification-driven AI workflows',
-];
-
 export default function About() {
   return (
-    <section id="about" className="bg-white py-24 dark:bg-[#151b17]">
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[.8fr_1.2fr] lg:px-12">
-        <div>
-          <p className="font-mono text-sm font-semibold uppercase tracking-[0.16em] text-[#c96d35]">Profile</p>
-          <h2 className="mt-4 font-serif text-4xl font-semibold text-[#15231b] sm:text-5xl dark:text-[#f4f0e8]">Engineering with ownership.</h2>
-        </div>
-        <div>
-          <p className="max-w-3xl text-xl leading-9 text-[#47564d] dark:text-[#c5cec7]">{personalConfig.summary.long}</p>
-          <div className="mt-10 grid gap-x-8 gap-y-5 sm:grid-cols-2">
-            {focusAreas.map((area, index) => (
-              <div key={area} className="border-t border-[#d7dfd9] pt-4 dark:border-[#3a463e]">
-                <span className="font-mono text-xs text-[#c96d35]">{String(index + 1).padStart(2, '0')}</span>
-                <p className="mt-2 font-medium text-[#1d2d23] dark:text-[#e3e8e3]">{area}</p>
-              </div>
-            ))}
+    <section id="overview" className="relative py-20 bg-[#0b101a] border-t border-slate-800/80 light:bg-white light:border-slate-200">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="max-w-3xl mb-12">
+          <div className="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-sky-400 light:text-sky-600 mb-3">
+            <span>01</span>
+            <span className="h-px w-6 bg-sky-400" />
+            <span>Professional Overview</span>
           </div>
-          <dl className="mt-12 grid gap-6 border-y border-[#d7dfd9] py-6 sm:grid-cols-3 dark:border-[#3a463e]">
-            <div><dt className="font-mono text-xs uppercase tracking-[0.12em] text-[#657269]">Experience</dt><dd className="mt-2 text-lg font-semibold text-[#1d2d23] dark:text-[#e3e8e3]">7+ years</dd></div>
-            <div><dt className="font-mono text-xs uppercase tracking-[0.12em] text-[#657269]">Based in</dt><dd className="mt-2 text-lg font-semibold text-[#1d2d23] dark:text-[#e3e8e3]">Dhaka, Bangladesh</dd></div>
-            <div><dt className="font-mono text-xs uppercase tracking-[0.12em] text-[#657269]">Education</dt><dd className="mt-2 text-lg font-semibold text-[#1d2d23] dark:text-[#e3e8e3]">B.Sc. Software Engineering</dd></div>
-          </dl>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white light:text-slate-900">
+            Enterprise Backend Engineering with Technical Ownership
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-slate-300 light:text-slate-600 leading-relaxed">
+            {personalConfig.summary.long}
+          </p>
+        </div>
+
+        {/* 5 Core Pillars Grid */}
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {personalConfig.overviewPillars.map((pillar, index) => (
+            <div
+              key={pillar.title}
+              className={`group relative rounded-xl border border-slate-800/90 bg-[#0e1626]/80 p-6 transition-all duration-200 hover:border-sky-500/40 hover:bg-[#121c30] light:bg-slate-50 light:border-slate-200 light:hover:border-sky-300 ${
+                index === 4 ? 'sm:col-span-2 lg:col-span-1' : ''
+              }`}
+            >
+              <div className="flex items-center justify-between gap-3 mb-4">
+                <span className="font-mono text-xs font-semibold text-sky-400 light:text-sky-600 bg-sky-500/10 light:bg-sky-50 px-2 py-0.5 rounded border border-sky-500/20">
+                  {pillar.badge}
+                </span>
+                <span className="font-mono text-xs text-slate-500">
+                  0{index + 1}
+                </span>
+              </div>
+              <h3 className="text-lg font-semibold text-slate-100 light:text-slate-900 group-hover:text-sky-400 transition-colors">
+                {pillar.title}
+              </h3>
+              <p className="mt-2.5 text-sm leading-relaxed text-slate-400 light:text-slate-600">
+                {pillar.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Engineering Profile Facts strip */}
+        <div className="mt-12 rounded-xl border border-slate-800 bg-[#0e1524]/50 p-6 light:bg-slate-50 light:border-slate-200">
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-wider text-slate-500">Total Experience</p>
+              <p className="mt-1 text-xl font-bold text-white light:text-slate-900">7+ Years</p>
+              <p className="text-xs text-slate-400 light:text-slate-500">Continuous backend growth</p>
+            </div>
+            <div>
+              <p className="font-mono text-xs uppercase tracking-wider text-slate-500">Primary Specialization</p>
+              <p className="mt-1 text-xl font-bold text-white light:text-slate-900">Java & Spring</p>
+              <p className="text-xs text-slate-400 light:text-slate-500">Enterprise microservices</p>
+            </div>
+            <div>
+              <p className="font-mono text-xs uppercase tracking-wider text-slate-500">Current Designation</p>
+              <p className="mt-1 text-xl font-bold text-white light:text-slate-900">Principal Engineer</p>
+              <p className="text-xs text-slate-400 light:text-slate-500">BJIT Ltd. (Dhaka)</p>
+            </div>
+            <div>
+              <p className="font-mono text-xs uppercase tracking-wider text-slate-500">Formal Education</p>
+              <p className="mt-1 text-xl font-bold text-white light:text-slate-900">B.Sc. Software Eng.</p>
+              <p className="text-xs text-slate-400 light:text-slate-500">Daffodil Int. University</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,120 +1,93 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f7f2;
-  --foreground: #15231b;
+  --background: #080c14;
+  --foreground: #f1f5f9;
+  --surface: #0e1524;
+  --surface-raised: #141d30;
+  --surface-border: #1e293b;
+  --surface-border-subtle: #172033;
+  --accent: #0ea5e9;
+  --accent-hover: #38bdf8;
+  --accent-muted: rgba(14, 165, 233, 0.12);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
   --font-geist-sans: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-geist-mono: 'Geist Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  --font-geist-mono: 'Geist Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
 }
 
-/* Apply dark mode when the 'dark' class is present on html */
-html.dark {
-  --background: #101512;
-  --foreground: #f4f0e8;
+html.light {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --surface-raised: #f1f5f9;
+  --surface-border: #e2e8f0;
+  --surface-border-subtle: #f1f5f9;
+  --accent: #0284c7;
+  --accent-hover: #0369a1;
+  --accent-muted: rgba(2, 132, 199, 0.08);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
 }
 
 * {
+  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
-html, body {
-  background: var(--background);
+html,
+body {
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: #c96d35;
-  color: #f7f7f2;
-}
-
-a, button, input, textarea {
-  transition-property: color, background-color, border-color, box-shadow, transform, opacity;
-  transition-duration: 180ms;
-  transition-timing-function: ease-out;
-}
-
-:focus-visible {
-  outline: 2px solid #c96d35;
-  outline-offset: 3px;
-}
-
-/* Explicit light and dark mode styles with higher specificity */
-html:not(.dark) {
-  background-color: #f7f7f2 !important;
-  color: #15231b !important;
-}
-
-html:not(.dark) body {
-  background-color: #f7f7f2 !important;
-  color: #15231b !important;
-}
-
-html.dark {
-  background-color: #101512 !important;
-  color: #f4f0e8 !important;
-}
-
-html.dark body {
-  background-color: #101512 !important;
-  color: #f4f0e8 !important;
+  background-color: rgba(14, 165, 233, 0.35);
+  color: #ffffff;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #080c14;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #237a57;
-  border-radius: 0;
+  background: #1e293b;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #c96d35;
+  background: #334155;
 }
 
-/* Dark mode scrollbar */
-html.dark ::-webkit-scrollbar-track {
-  background: #1f2937;
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
 }
 
-/* Animation for fade in */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
 }
 
-.fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
+/* Restrained Focus styles */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
-/* Gradient text animation */
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.animate-gradient {
-  background: linear-gradient(-45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981);
-  background-size: 400% 400%;
-  animation: gradient 3s ease infinite;
+/* Code and mono accents */
+code,
+pre,
+.font-mono {
+  font-family: var(--font-geist-mono), monospace;
 }

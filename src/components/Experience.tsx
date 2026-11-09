@@ -1,81 +1,127 @@
-'use client';
-
 import { personalConfig } from '@/config/personal';
 
 export default function Experience() {
-  const experiences = personalConfig.experience;
-
   return (
-    <section id="experience" className="bg-[#eef1ec] py-24 dark:bg-[#151b17]">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-        <div className="mb-14 flex flex-col justify-between gap-4 border-b border-[#cbd6ce] pb-6 sm:flex-row sm:items-end dark:border-[#3a463e]">
-          <div>
-          <p className="font-mono text-sm font-semibold uppercase tracking-[0.16em] text-[#c96d35]">Career</p>
-          <h2 className="mt-3 font-serif text-4xl font-semibold text-[#15231b] sm:text-5xl dark:text-[#f4f0e8]">
-            Work Experience
-          </h2>
+    <section id="experience" className="relative py-20 bg-[#0b101a] border-t border-slate-800/80 light:bg-white light:border-slate-200">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="max-w-3xl mb-14">
+          <div className="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-sky-400 light:text-sky-600 mb-3">
+            <span>03</span>
+            <span className="h-px w-6 bg-sky-400" />
+            <span>Career History</span>
           </div>
-          <p className="max-w-xs text-sm leading-6 text-[#657269] dark:text-[#aebbb1]">A track record of building dependable systems and helping teams deliver with clarity.</p>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white light:text-slate-900">
+            Professional Experience & Career Progression
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-slate-300 light:text-slate-600 leading-relaxed">
+            7+ years of hands-on engineering progression from Software Developer to Senior Backend Engineer to Principal Software Engineer.
+          </p>
         </div>
 
-        {/* Vertical timeline */}
-        <div className="relative">
-          {experiences.map((exp, index) => (
-            <div key={index} className="relative pb-12 pl-7 last:pb-0 sm:pl-10">
-              {/* Timeline connector line */}
-              {index < experiences.length - 1 && (
-                <div className="absolute left-[5px] top-[18px] h-full w-px bg-[#cbd6ce] dark:bg-[#3a463e] sm:left-[7px]" />
-              )}
-              {/* Timeline dot */}
-              <div className={`absolute left-0 top-[7px] h-3 w-3 rounded-full ring-4 ${
-                exp.type === 'Current Role'
-                  ? 'bg-[#237a57] ring-[#eef1ec] dark:ring-[#151b17]'
-                  : 'bg-[#a9b6ac] ring-[#eef1ec] dark:bg-[#526159] dark:ring-[#151b17]'
-              }`} />
-
-              {/* Header */}
-              <div className="mb-1.5 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-                <div className="flex flex-wrap items-center gap-2.5">
-                  <h3 className="text-xl font-semibold text-[#15231b] sm:text-2xl dark:text-[#f4f0e8]">{exp.title}</h3>
-                  {exp.type === 'Current Role' && (
-                    <span className="border border-[#9bc5ac] px-2.5 py-0.5 font-mono text-[0.65rem] uppercase tracking-[0.1em] text-[#237a57] dark:border-[#527e64] dark:text-[#72c79d]">Current</span>
-                  )}
+        {/* Companies Stack */}
+        <div className="space-y-12">
+          {personalConfig.experience.map((companyGroup) => (
+            <div
+              key={companyGroup.company}
+              className="rounded-2xl border border-slate-800/90 bg-[#0e1626]/70 p-6 sm:p-8 transition-all light:bg-slate-50 light:border-slate-200"
+            >
+              {/* Company Level Header */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-slate-800/80 pb-6 mb-8 light:border-slate-200">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-sky-500/30 bg-sky-500/10 font-mono text-sm font-bold text-sky-400 light:bg-sky-50 light:border-sky-300 light:text-sky-700">
+                    {companyGroup.company.slice(0, 2).toUpperCase()}
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2.5">
+                      <h3 className="text-xl font-bold text-white light:text-slate-900">
+                        {companyGroup.company}
+                      </h3>
+                      {companyGroup.isCurrent && (
+                        <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 font-mono text-[0.65rem] font-semibold uppercase tracking-wider text-emerald-400 light:bg-emerald-50 light:border-emerald-300 light:text-emerald-700">
+                          Current Organization
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-xs font-mono text-slate-400 light:text-slate-500 mt-0.5">
+                      {companyGroup.location}
+                    </p>
+                  </div>
                 </div>
-                <span className="shrink-0 font-mono text-xs text-[#8a968d]">{exp.period}</span>
+
+                <div className="text-xs font-mono font-medium text-slate-300 bg-slate-900/80 border border-slate-800 rounded-md px-3 py-1.5 self-start sm:self-auto light:bg-white light:border-slate-200 light:text-slate-700">
+                  {companyGroup.period}
+                </div>
               </div>
 
-              {/* Company */}
-              <p className="mb-4 font-semibold text-[#237a57] dark:text-[#72c79d]">
-                {exp.company}
-                <span className="mx-2 font-normal text-[#a9b6ac]">·</span>
-                <span className="font-normal text-[#657269] dark:text-[#8a968d]">{exp.location}</span>
-              </p>
+              {/* Roles Timeline within Company */}
+              <div className="relative pl-6 sm:pl-8 space-y-10">
+                {/* Vertical timeline spine */}
+                <div className="absolute left-2 sm:left-3 top-2.5 bottom-2.5 w-px bg-slate-800 light:bg-slate-300" />
 
-              {/* Responsibilities */}
-              <ul className="mb-4 space-y-2">
-                {exp.responsibilities.map((r, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5">
-                    <span className="mt-[9px] h-1 w-1 shrink-0 bg-[#c96d35]" />
-                    <span className="leading-relaxed text-[#526159] dark:text-[#c5cec7]">{r}</span>
-                  </li>
-                ))}
-              </ul>
+                {companyGroup.roles.map((role) => (
+                  <div key={role.title} className="relative group">
+                    {/* Timeline Node Indicator */}
+                    <div
+                      className={`absolute -left-6 sm:-left-8 top-1 flex h-4 w-4 items-center justify-center rounded-full border-2 transition-transform ${
+                        role.current
+                          ? 'border-emerald-400 bg-emerald-500 shadow-md shadow-emerald-500/30'
+                          : 'border-slate-600 bg-slate-900 light:bg-white light:border-slate-400'
+                      }`}
+                    >
+                      {role.current && (
+                        <span className="h-1.5 w-1.5 rounded-full bg-slate-950" />
+                      )}
+                    </div>
 
-              {/* Tech tags */}
-              <div className="flex flex-wrap gap-1.5">
-                {exp.technologies.map((tech, idx) => (
-                  <span key={idx} className="border border-[#cbd6ce] px-2.5 py-0.5 font-mono text-xs text-[#526159] dark:border-[#3a463e] dark:text-[#8a968d]">{tech}</span>
+                    {/* Role Details */}
+                    <div>
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
+                        <div className="flex items-center gap-2">
+                          <h4 className="text-lg font-semibold text-white light:text-slate-900 group-hover:text-sky-400 transition-colors">
+                            {role.title}
+                          </h4>
+                          {role.current && (
+                            <span className="rounded bg-sky-500/10 border border-sky-500/20 px-2 py-0.5 font-mono text-[0.65rem] text-sky-400 font-semibold">
+                              Current Role
+                            </span>
+                          )}
+                        </div>
+                        <span className="font-mono text-xs text-slate-400 light:text-slate-500">
+                          {role.period}
+                        </span>
+                      </div>
+
+                      {/* Bullet points */}
+                      <ul className="mt-3 space-y-2">
+                        {role.points.map((pt, idx) => (
+                          <li
+                            key={idx}
+                            className="flex items-start gap-2.5 text-sm leading-relaxed text-slate-300 light:text-slate-600"
+                          >
+                            <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-sky-400 light:bg-sky-600" />
+                            <span>{pt}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      {/* Technology tags */}
+                      <div className="mt-4 flex flex-wrap gap-1.5">
+                        {role.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="inline-flex items-center rounded border border-slate-700/60 bg-slate-900/60 px-2.5 py-0.5 font-mono text-[0.7rem] text-slate-300 light:bg-white light:border-slate-200 light:text-slate-700"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <span className="inline-flex items-center gap-2 border border-[#c96d35] px-6 py-3 font-mono text-xs uppercase tracking-[0.1em] text-[#c96d35]">
-            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
-            7+ Years of Professional Experience
-          </span>
         </div>
       </div>
     </section>
