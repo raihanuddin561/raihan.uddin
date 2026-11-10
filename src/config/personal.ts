@@ -306,6 +306,6 @@ export const personalConfig = {
     description:
       "Raihan Uddin is a backend software engineer specializing in Java, Spring Boot, microservices, REST APIs, and reliable enterprise application development.",
     canonicalUrl: "https://raihanuddin.me",
-    ogImage: "/images/raihan-uddin.jpeg",
+    ogImage: "/images/raihan-uddin.jpg",
   },
 };

@@ -53,8 +53,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: personalConfig.seo.ogImage,
-        width: 610,
-        height: 751,
+        width: 1792,
+        height: 2400,
         alt: `${personalConfig.name} — Senior Backend Engineer`,
       },
     ],
