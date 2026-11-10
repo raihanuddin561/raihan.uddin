@@ -43,6 +43,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+  },
   openGraph: {
     title: personalConfig.seo.title,
     description: personalConfig.seo.description,
