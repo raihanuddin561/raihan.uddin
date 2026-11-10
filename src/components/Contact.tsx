@@ -158,6 +158,19 @@ export default function Contact() {
                     </svg>
                     {error}
                   </div>
+                  <div className="mt-3 pt-3 border-t border-red-500/20 text-xs text-slate-300 light:text-slate-700">
+                    <p className="mb-1.5">You can still send your message right away:</p>
+                    <a
+                      href={`mailto:${personalConfig.contact.email}?subject=${encodeURIComponent(
+                        formData.name ? `Portfolio Message from ${formData.name}` : 'Portfolio Contact Message'
+                      )}&body=${encodeURIComponent(
+                        `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company || 'N/A'}\n\nMessage:\n${formData.message}`
+                      )}`}
+                      className="inline-flex items-center gap-1.5 font-semibold text-sky-400 hover:text-sky-300 light:text-sky-700 underline"
+                    >
+                      <span>Click here to send directly via your email client →</span>
+                    </a>
+                  </div>
                 </div>
               )}
 
