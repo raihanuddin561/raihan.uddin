@@ -329,6 +329,6 @@ export const personalConfig = {
     description:
       "Raihan Uddin is a Senior Backend Engineer with 7+ years of experience in Java, Spring Boot, Microservices, REST APIs, and backend application development.",
     canonicalUrl: "https://raihanuddin.me",
-    ogImage: "/images/raihan-uddin.jpeg",
+    ogImage: "/images/raihan-uddin.jpg",
   },
 };

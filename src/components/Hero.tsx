@@ -160,10 +160,10 @@ export default function Hero() {
             <div className="relative w-full max-w-[280px] xs:max-w-[310px] sm:max-w-[330px] lg:max-w-[340px]">
               {/* Professional frame with subtle border and elevation */}
               <div className="relative rounded-2xl border border-slate-800/90 bg-[#0e1524]/90 p-2.5 sm:p-3 shadow-2xl shadow-black/50 light:bg-white light:border-slate-200">
-                {/* Portrait Container - Matches original image proportions (610x751) */}
-                <div className="relative aspect-[610/751] w-full overflow-hidden rounded-xl bg-slate-900 light:bg-slate-100">
+                {/* Portrait Container - Matches image proportions (1792x2400 -> 3:4) */}
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-slate-900 light:bg-slate-100">
                   <Image
-                    src="/images/raihan-uddin.jpeg"
+                    src="/images/raihan-uddin.jpg"
                     alt="Portrait of Raihan Uddin — Senior Backend Engineer"
                     fill
                     priority
