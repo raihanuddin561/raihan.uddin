@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   title: personalConfig.seo.title,
   description: personalConfig.seo.description,
   keywords: [
+    "Raihan Uddin",
+    "Raihan Uddin Software Engineer",
+    "Raihan Uddin BJIT",
+    "Raihan Uddin Java",
+    "Raihan Uddin Backend Engineer",
     "Senior Backend Engineer",
     "Java",
     "Spring Boot",
@@ -35,13 +40,13 @@ export const metadata: Metadata = {
     "Spring Data JPA",
     "Principal Software Engineer",
     "BJIT Ltd",
-    "Raihan Uddin",
     "Dhaka Bangladesh",
     "AI-Assisted Software Development",
   ],
   authors: [{ name: personalConfig.name, url: personalConfig.social.linkedin.url }],
   creator: personalConfig.name,
   publisher: personalConfig.name,
+  manifest: "/site.webmanifest",
   alternates: {
     canonical: "/",
   },
@@ -50,12 +55,15 @@ export const metadata: Metadata = {
       { url: "/icon.svg", type: "image/svg+xml" },
       { url: "/favicon.ico", sizes: "any" },
     ],
+    apple: [
+      { url: "/icon.svg" },
+    ],
   },
   openGraph: {
     title: personalConfig.seo.title,
     description: personalConfig.seo.description,
     url: personalConfig.seo.canonicalUrl,
-    siteName: `${personalConfig.name} — Portfolio`,
+    siteName: personalConfig.name,
     locale: "en_US",
     type: "profile",
     images: [
@@ -84,6 +92,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  other: {
+    "profile:first_name": "Raihan",
+    "profile:last_name": "Uddin",
+    "profile:username": personalConfig.social.github.username,
+  },
 };
 
 const structuredData = {
@@ -93,9 +106,16 @@ const structuredData = {
       "@type": "Person",
       "@id": `${personalConfig.seo.canonicalUrl}/#person`,
       name: personalConfig.name,
+      givenName: "Raihan",
+      familyName: "Uddin",
+      alternateName: ["Raihan Uddin", "Md. Raihan Uddin", "raihanuddin561", "Raihan Uddin BJIT"],
+      gender: "https://schema.org/Male",
       jobTitle: "Senior Backend Engineer",
       description: personalConfig.summary.short,
       email: `mailto:${personalConfig.contact.email}`,
+      telephone: "+8801749948344",
+      url: personalConfig.seo.canonicalUrl,
+      image: `${personalConfig.seo.canonicalUrl}${personalConfig.seo.ogImage}`,
       address: {
         "@type": "PostalAddress",
         addressLocality: "Dhaka",
@@ -109,13 +129,21 @@ const structuredData = {
       alumniOf: {
         "@type": "CollegeOrUniversity",
         name: personalConfig.education[0].institution,
+        url: "https://daffodilvarsity.edu.bd",
       },
-      url: personalConfig.seo.canonicalUrl,
-      image: `${personalConfig.seo.canonicalUrl}${personalConfig.seo.ogImage}`,
       sameAs: [
         personalConfig.social.linkedin.url,
         personalConfig.social.github.url,
+        "https://kuttush.shop",
+        "https://skyzonebd.shop",
       ],
+      hasOccupation: {
+        "@type": "Occupation",
+        name: "Senior Backend Engineer",
+        occupationalCategory: "15-1252.00",
+        description: "Designing and developing enterprise Java, Spring Boot, microservices, REST APIs, and database persistence architectures.",
+        skills: "Java, Spring Boot, Microservices, REST APIs, PostgreSQL, MySQL, Spring Data JPA, Hibernate, Docker",
+      },
       knowsAbout: [
         "Java",
         "Spring Boot",
@@ -133,16 +161,19 @@ const structuredData = {
         "System Design",
         "AI-Assisted Software Development",
       ],
+      mainEntityOfPage: personalConfig.seo.canonicalUrl,
     },
     {
       "@type": "WebSite",
       "@id": `${personalConfig.seo.canonicalUrl}/#website`,
       url: personalConfig.seo.canonicalUrl,
-      name: `${personalConfig.name} | Senior Backend Engineer`,
+      name: "Raihan Uddin",
+      alternateName: "Raihan Uddin Portfolio",
       description: personalConfig.seo.description,
       publisher: {
         "@id": `${personalConfig.seo.canonicalUrl}/#person`,
       },
+      inLanguage: "en-US",
     },
     {
       "@type": "ProfilePage",
@@ -158,6 +189,7 @@ const structuredData = {
       mainEntity: {
         "@id": `${personalConfig.seo.canonicalUrl}/#person`,
       },
+      inLanguage: "en-US",
     },
   ],
 };

@@ -34,7 +34,7 @@ export const personalConfig = {
     short:
       "Senior Backend Engineer with 7+ years of experience in Java, Spring Boot, Microservices, REST APIs, and backend application development.",
     long:
-      "I am a Senior Backend Engineer with 7+ years of hands-on experience building and maintaining enterprise applications using Java, Spring Boot, REST APIs, and microservices. My engineering background spans backend service development, API contract design, relational database modeling and query optimization, automated testing, production troubleshooting, and system maintainability. I actively contribute to technical design discussions, code reviews, engineering standards, and mentoring, complemented by practical AI-assisted development practices. My primary professional focus is building maintainable, reliable, scalable, and well-structured backend systems.",
+      "I am Raihan Uddin, a Senior Backend Engineer with 7+ years of hands-on experience building and maintaining enterprise applications using Java, Spring Boot, REST APIs, and microservices. My engineering background spans backend service development, API contract design, relational database modeling and query optimization, automated testing, production troubleshooting, and system maintainability. I actively contribute to technical design discussions, code reviews, engineering standards, and mentoring, complemented by practical AI-assisted development practices. My primary professional focus is building maintainable, reliable, scalable, and well-structured backend systems.",
   },
 
   // Professional Overview Pillars
