@@ -157,44 +157,30 @@ export default function Hero() {
 
           {/* Right Column: Professional Portrait (Cols 8-12) */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[360px] lg:max-w-[380px]">
-              {/* Outer decorative framing with subtle technical corner borders */}
-              <div className="relative rounded-2xl p-2 sm:p-2.5 bg-gradient-to-b from-slate-700/50 via-slate-800/20 to-slate-800/60 border border-slate-700/60 shadow-2xl shadow-black/60 light:from-slate-200 light:to-slate-100 light:border-slate-300">
-                {/* Subtle cyan corner accent mark */}
-                <div className="absolute top-0 left-0 h-3.5 w-3.5 border-t-2 border-l-2 border-sky-400 rounded-tl-2xl pointer-events-none" />
-                <div className="absolute top-0 right-0 h-3.5 w-3.5 border-t-2 border-r-2 border-sky-400 rounded-tr-2xl pointer-events-none" />
-                <div className="absolute bottom-0 left-0 h-3.5 w-3.5 border-b-2 border-l-2 border-sky-400 rounded-bl-2xl pointer-events-none" />
-                <div className="absolute bottom-0 right-0 h-3.5 w-3.5 border-b-2 border-r-2 border-sky-400 rounded-br-2xl pointer-events-none" />
-
-                {/* Portrait Container */}
-                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-slate-900 light:bg-slate-200">
+            <div className="relative w-full max-w-[280px] xs:max-w-[310px] sm:max-w-[330px] lg:max-w-[340px]">
+              {/* Professional frame with subtle border and elevation */}
+              <div className="relative rounded-2xl border border-slate-800/90 bg-[#0e1524]/90 p-2.5 sm:p-3 shadow-2xl shadow-black/50 light:bg-white light:border-slate-200">
+                {/* Portrait Container - Matches original image proportions (610x751) */}
+                <div className="relative aspect-[610/751] w-full overflow-hidden rounded-xl bg-slate-900 light:bg-slate-100">
                   <Image
-                    src="/images/raihan-uddin.jpg"
-                    alt="Raihan Uddin — Senior Backend Engineer"
+                    src="/images/raihan-uddin.jpeg"
+                    alt="Portrait of Raihan Uddin — Senior Backend Engineer"
                     fill
                     priority
-                    sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 380px"
-                    className="object-cover object-top transition-transform duration-500 hover:scale-[1.02]"
+                    sizes="(max-width: 640px) 280px, (max-width: 1024px) 320px, 340px"
+                    className="object-cover object-center"
                   />
-                  {/* Subtle inner gradient shadow at bottom to improve readability of overlay tag */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#080c14]/90 via-transparent to-transparent pointer-events-none" />
                 </div>
 
-                {/* Executive Title Card / Overlay Banner */}
-                <div className="absolute bottom-4 left-4 right-4 sm:bottom-5 sm:left-5 sm:right-5 rounded-lg border border-slate-700/80 bg-[#080c14]/95 p-3 sm:p-3.5 backdrop-blur-md shadow-lg light:bg-white/95 light:border-slate-200">
-                  <div className="flex items-center justify-between gap-2">
-                    <div>
-                      <p className="text-xs font-bold text-white light:text-slate-900 tracking-tight">
-                        Raihan Uddin
-                      </p>
-                      <p className="text-[0.68rem] sm:text-[0.7rem] font-mono text-sky-400 light:text-sky-600">
-                        Principal Software Engineer
-                      </p>
-                    </div>
-                    <span className="inline-flex items-center rounded border border-slate-700 bg-slate-900/80 px-2 py-0.5 sm:py-1 font-mono text-[0.62rem] sm:text-[0.65rem] text-slate-300 light:border-slate-300 light:bg-slate-100 light:text-slate-700">
-                      BJIT Ltd.
-                    </span>
+                {/* Subtle, non-intrusive metadata caption below the portrait */}
+                <div className="mt-3 px-1.5 flex items-center justify-between text-xs font-mono">
+                  <div className="flex items-center gap-2 text-slate-300 light:text-slate-700">
+                    <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                    <span className="font-medium text-[0.72rem]">Raihan Uddin</span>
                   </div>
+                  <span className="text-[0.68rem] text-slate-500 light:text-slate-400">
+                    Dhaka, Bangladesh
+                  </span>
                 </div>
               </div>
             </div>
