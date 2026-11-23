@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://raihanuddin.me"),
+  metadataBase: new URL(personalConfig.seo.canonicalUrl),
   title: personalConfig.seo.title,
   description: personalConfig.seo.description,
   keywords: [
@@ -36,6 +36,8 @@ export const metadata: Metadata = {
     "Principal Software Engineer",
     "BJIT Ltd",
     "Raihan Uddin",
+    "Dhaka Bangladesh",
+    "AI-Assisted Software Development",
   ],
   authors: [{ name: personalConfig.name, url: personalConfig.social.linkedin.url }],
   creator: personalConfig.name,
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: personalConfig.seo.title,
     description: personalConfig.seo.description,
-    url: "https://raihanuddin.me",
+    url: personalConfig.seo.canonicalUrl,
     siteName: `${personalConfig.name} — Portfolio`,
     locale: "en_US",
     type: "profile",
@@ -74,41 +76,89 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
-const jsonLd = {
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: personalConfig.name,
-  jobTitle: personalConfig.headline,
-  description: personalConfig.summary.short,
-  email: `mailto:${personalConfig.contact.email}`,
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Dhaka",
-    addressCountry: "Bangladesh",
-  },
-  worksFor: {
-    "@type": "Organization",
-    name: personalConfig.company,
-  },
-  alumniOf: {
-    "@type": "CollegeOrUniversity",
-    name: personalConfig.education[0].institution,
-  },
-  sameAs: [personalConfig.social.linkedin.url, personalConfig.social.github.url],
-  knowsAbout: [
-    "Java",
-    "Spring Boot",
-    "Microservices",
-    "REST APIs",
-    "PostgreSQL",
-    "Backend Architecture",
-    "Spring Data JPA",
-    "Hibernate",
-    "Docker",
-    "System Design",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${personalConfig.seo.canonicalUrl}/#person`,
+      name: personalConfig.name,
+      jobTitle: "Senior Backend Engineer",
+      description: personalConfig.summary.short,
+      email: `mailto:${personalConfig.contact.email}`,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Dhaka",
+        addressCountry: "Bangladesh",
+      },
+      worksFor: {
+        "@type": "Organization",
+        name: personalConfig.company,
+        url: personalConfig.companyUrl,
+      },
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: personalConfig.education[0].institution,
+      },
+      url: personalConfig.seo.canonicalUrl,
+      image: `${personalConfig.seo.canonicalUrl}${personalConfig.seo.ogImage}`,
+      sameAs: [
+        personalConfig.social.linkedin.url,
+        personalConfig.social.github.url,
+      ],
+      knowsAbout: [
+        "Java",
+        "Spring Boot",
+        "Microservices",
+        "REST APIs",
+        "Backend-for-Frontend (BFF)",
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB",
+        "Spring Data JPA",
+        "Hibernate",
+        "Docker",
+        "JUnit 5",
+        "Mockito",
+        "System Design",
+        "AI-Assisted Software Development",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${personalConfig.seo.canonicalUrl}/#website`,
+      url: personalConfig.seo.canonicalUrl,
+      name: `${personalConfig.name} | Senior Backend Engineer`,
+      description: personalConfig.seo.description,
+      publisher: {
+        "@id": `${personalConfig.seo.canonicalUrl}/#person`,
+      },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${personalConfig.seo.canonicalUrl}/#webpage`,
+      url: personalConfig.seo.canonicalUrl,
+      name: personalConfig.seo.title,
+      isPartOf: {
+        "@id": `${personalConfig.seo.canonicalUrl}/#website`,
+      },
+      about: {
+        "@id": `${personalConfig.seo.canonicalUrl}/#person`,
+      },
+      mainEntity: {
+        "@id": `${personalConfig.seo.canonicalUrl}/#person`,
+      },
+    },
   ],
 };
 
@@ -140,7 +190,7 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
       <body

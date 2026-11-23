@@ -12,10 +12,10 @@ export default function Skills() {
             <span>Technical Capabilities</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white light:text-slate-900">
-            Technical Expertise & Tooling
+            Technical Skills &amp; Engineering Tooling
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-300 light:text-slate-600 leading-relaxed">
-            Honest, verified technical competencies across server-side architecture, relational data management, and automated verification.
+            Honest, verified technical competencies across server-side engineering, relational data architecture, automated testing, and modern AI-assisted software development.
           </p>
         </div>
 
@@ -30,17 +30,17 @@ export default function Skills() {
                 <div className="flex items-center justify-between gap-2 border-b border-slate-800/80 pb-3 mb-4 light:border-slate-200">
                   <div className="flex items-center gap-2.5">
                     <span className="flex h-6 w-6 items-center justify-center rounded bg-sky-500/10 font-mono text-xs font-semibold text-sky-400 border border-sky-500/20">
-                      {idx + 1}
+                      0{idx + 1}
                     </span>
                     <h3 className="text-base font-semibold text-white light:text-slate-900">
                       {cat.category}
                     </h3>
                   </div>
                   <span className="font-mono text-[0.7rem] text-slate-500">
-                    {cat.skills.length} items
+                    {cat.skills.length} skills
                   </span>
                 </div>
-                <p className="text-xs text-slate-400 light:text-slate-500 mb-4">
+                <p className="text-xs text-slate-400 light:text-slate-500 mb-4 min-h-[32px]">
                   {cat.description}
                 </p>
               </div>
@@ -48,12 +48,12 @@ export default function Skills() {
               {/* Skill Badges */}
               <div className="flex flex-wrap gap-2 pt-2">
                 {cat.skills.map((skill) => {
-                  const isLearning = skill.includes('(learning)');
+                  const isBasic = skill.includes('(Basic Knowledge)');
                   return (
                     <span
                       key={skill}
                       className={`inline-flex items-center rounded-md px-2.5 py-1 text-xs font-mono transition-colors ${
-                        isLearning
+                        isBasic
                           ? 'border border-amber-500/30 bg-amber-500/10 text-amber-300 light:bg-amber-50 light:border-amber-300 light:text-amber-800'
                           : 'border border-slate-700/60 bg-slate-900/80 text-slate-200 hover:border-sky-500/40 hover:text-sky-300 light:bg-slate-100 light:border-slate-200 light:text-slate-700 light:hover:border-sky-300'
                       }`}

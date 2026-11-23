@@ -18,10 +18,10 @@ export default function Projects() {
             <span>Project Showcase</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white light:text-slate-900">
-            Selected Engineering Projects
+            Selected Personal &amp; Engineering Projects
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-300 light:text-slate-600 leading-relaxed">
-            Real-world backend systems and B2B platforms demonstrating service-layer design, REST contracts, and relational data architecture.
+            Real-world backend architectures, specialized e-commerce platforms, and intelligent B2B systems. Clearly distinguished from professional employment experience.
           </p>
         </div>
 
@@ -33,7 +33,7 @@ export default function Projects() {
               className="rounded-2xl border border-slate-800/90 bg-[#0e1524]/90 overflow-hidden transition-all duration-200 hover:border-slate-700 light:bg-white light:border-slate-200"
             >
               <div className="grid lg:grid-cols-12 gap-0">
-                {/* Visual / Architecture Display Column (Cols 1-5) */}
+                {/* Visual / Architectural Blueprint Column (Cols 1-5) */}
                 <div className="lg:col-span-5 bg-[#0b101b] border-b lg:border-b-0 lg:border-r border-slate-800/80 flex flex-col justify-center p-6 sm:p-8 light:bg-slate-100 light:border-slate-200">
                   {project.image ? (
                     <div className="space-y-3">
@@ -54,44 +54,79 @@ export default function Projects() {
                           <svg className="h-3 w-3 text-sky-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
                           </svg>
-                          Expand
+                          Expand Preview
                         </div>
                       </div>
                       <p className="text-center font-mono text-[0.7rem] text-slate-500">
-                        Verified application dashboard &amp; catalog preview
+                        Spring Boot REST service dashboard &amp; catalog preview
                       </p>
                     </div>
-                  ) : (
-                    /* Architectural Blueprint Card for SkyZoneBD */
-                    <div className="rounded-xl border border-slate-700/80 bg-slate-900/80 p-6 space-y-4 light:bg-white light:border-slate-200">
+                  ) : project.id === 'skyzonebd' ? (
+                    /* Architectural Blueprint Card for SkyZoneBD with AI Assistant */
+                    <div className="rounded-xl border border-slate-700/80 bg-slate-900/90 p-6 space-y-4 light:bg-white light:border-slate-200">
                       <div className="flex items-center justify-between border-b border-slate-800 pb-3 light:border-slate-200">
                         <span className="font-mono text-xs font-semibold text-sky-400">
-                          SYSTEM ARCHITECTURE
+                          B2B SYSTEM &amp; AI ARCHITECTURE
                         </span>
                         <span className="font-mono text-[0.65rem] text-slate-400">
-                          B2B COMMERCE
+                          WHOLESALE PLATFORM
                         </span>
                       </div>
-                      <div className="space-y-2 text-xs font-mono text-slate-300 light:text-slate-600">
+                      <div className="space-y-2.5 text-xs font-mono text-slate-300 light:text-slate-600">
                         <div className="flex items-center gap-2">
-                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                          <span>Buyer Vetting Pipeline</span>
+                          <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                          <span>Commercial Buyer Verification</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
-                          <span>Tiered Pricing &amp; MOQ Matrix</span>
+                          <span className="h-2 w-2 rounded-full bg-sky-400" />
+                          <span>Tiered Volume Pricing &amp; MOQs</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="h-1.5 w-1.5 rounded-full bg-indigo-400" />
-                          <span>RFQ &amp; Supplier Counter-Offer</span>
+                          <span className="h-2 w-2 rounded-full bg-indigo-400" />
+                          <span>RFQ Negotiation &amp; Counter-Offers</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
-                          <span>Partner Profit Settlement</span>
+                          <span className="h-2 w-2 rounded-full bg-amber-400" />
+                          <span>Integrated B2B AI Assistant</span>
                         </div>
                       </div>
-                      <div className="pt-2 text-[0.7rem] text-slate-500 font-mono border-t border-slate-800 light:border-slate-200">
-                        PostgreSQL + Prisma relational model
+                      <div className="pt-3 text-[0.7rem] text-slate-400 font-mono border-t border-slate-800 light:border-slate-200 flex items-center justify-between">
+                        <span>PostgreSQL + Prisma</span>
+                        <span className="text-emerald-400 font-semibold">Live in Production</span>
+                      </div>
+                    </div>
+                  ) : (
+                    /* Architectural Blueprint Card for Kuttush Baby E-Commerce */
+                    <div className="rounded-xl border border-slate-700/80 bg-slate-900/90 p-6 space-y-4 light:bg-white light:border-slate-200">
+                      <div className="flex items-center justify-between border-b border-slate-800 pb-3 light:border-slate-200">
+                        <span className="font-mono text-xs font-semibold text-sky-400">
+                          E-COMMERCE SYSTEM ARCHITECTURE
+                        </span>
+                        <span className="font-mono text-[0.65rem] text-slate-400">
+                          BABY PRODUCTS
+                        </span>
+                      </div>
+                      <div className="space-y-2.5 text-xs font-mono text-slate-300 light:text-slate-600">
+                        <div className="flex items-center gap-2">
+                          <span className="h-2 w-2 rounded-full bg-sky-400" />
+                          <span>Frictionless Product Discovery</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                          <span>Cart State &amp; Checkout Workflows</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="h-2 w-2 rounded-full bg-indigo-400" />
+                          <span>Core Web Vitals &amp; SEO Structured Data</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="h-2 w-2 rounded-full bg-purple-400" />
+                          <span>AI-Assisted Architecture &amp; Refinement</span>
+                        </div>
+                      </div>
+                      <div className="pt-3 text-[0.7rem] text-slate-400 font-mono border-t border-slate-800 light:border-slate-200 flex items-center justify-between">
+                        <span>Next.js + React + Tailwind</span>
+                        <span className="text-emerald-400 font-semibold">Live in Production</span>
                       </div>
                     </div>
                   )}
@@ -182,9 +217,9 @@ export default function Projects() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 rounded-md bg-sky-500 px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-sky-400 transition-colors"
+                        className="inline-flex items-center gap-1.5 rounded-md bg-sky-500 px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-sky-400 transition-colors shadow-sm shadow-sky-500/20"
                       >
-                        <span>Live Demo</span>
+                        <span>Visit Live Website</span>
                         <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                         </svg>
@@ -225,7 +260,7 @@ export default function Projects() {
           >
             <div className="flex items-center justify-between border-b border-slate-800 bg-slate-950 px-4 py-3">
               <span className="font-mono text-xs text-slate-300">
-                B2B E-Commerce Interface Preview
+                Java Spring Boot B2B E-Commerce Interface Preview
               </span>
               <button
                 onClick={() => setZoomedImage(null)}
